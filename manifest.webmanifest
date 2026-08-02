@@ -1,0 +1,20 @@
+{
+  "name": "ALBAZ Yallop Crescent Visibility Maps",
+  "short_name": "Yallop Maps",
+  "description": "خرائط رؤية الهلال وفق معيار يالوب q-test",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07101c",
+  "theme_color": "#08101b",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

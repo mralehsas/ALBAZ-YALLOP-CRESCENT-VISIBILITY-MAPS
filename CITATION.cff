@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "ALBAZ Yallop Crescent Visibility Maps"
+message: "Please cite this software and the original Yallop method reference."
+type: software
+authors:
+  - family-names: "Albaz"
+    given-names: "Omar"
+version: "9.6.3"
+date-released: "2026-08-02"
+abstract: "An Arabic web application for global lunar crescent visibility mapping using the Yallop q-test."
+keywords:
+  - astronomy
+  - lunar crescent
+  - Yallop criterion
+  - visibility maps
+references:
+  - type: report
+    title: "A Method for Predicting the First Sighting of the New Crescent Moon"
+    authors:
+      - family-names: "Yallop"
+        given-names: "B. D."
+    year: 1997

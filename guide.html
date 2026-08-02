@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08101b">
+<title>الدليل العلمي — خرائط يالوب للهلال v9.6.3</title>
+<style>
+:root{--bg:#07101c;--card:#111f31;--line:#35506f;--gold:#e5c36d;--text:#eef6ff;--muted:#b7c7d9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#07101c,#04080e);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+.wrap{max-width:1050px;margin:auto;padding:22px}.hero,.card{background:linear-gradient(180deg,#13243a,#0b1625);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px;box-shadow:0 18px 55px #0007}
+h1,h2,h3{color:#ffe4a3;margin-top:0}h1{font-size:clamp(24px,4vw,42px)}a{color:#ffe4a3}.pill{display:inline-block;border:1px solid #9a7d3d;border-radius:999px;padding:5px 11px;color:#ffe4a3}.eq{direction:ltr;text-align:center;background:#07101c;border:1px solid #3b5878;border-radius:14px;padding:14px;font-family:Consolas,monospace;overflow:auto}
+table{width:100%;border-collapse:collapse;background:#091321}th,td{border:1px solid #395675;padding:10px;text-align:right}th{background:#1a2c45;color:#ffe4a3}.sw{display:inline-block;width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-left:7px;border:1px solid #789}.note{border-right:4px solid var(--gold);padding:12px 15px;background:#0b1727}.muted{color:var(--muted)}code{direction:ltr;unicode-bidi:embed;background:#07101c;padding:2px 6px;border-radius:6px}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;background:#e5c36d;color:#07101c;padding:10px 16px;border-radius:12px;font-weight:bold}@media(max-width:700px){.wrap{padding:10px}.hero,.card{padding:16px;border-radius:15px}table{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<span class="pill">ALBAZ v9.6.3 Web Edition</span>
+<h1>الدليل العلمي والتشغيلي لخرائط يالوب</h1>
+<p>يوضح هذا الدليل مبدأ معيار يالوب، مدلولات الفئات اللونية، خطوات تشغيل الخريطة، وحدود التفسير العلمي للنتائج.</p>
+<div class="actions"><a class="btn" href="index.html">فتح البرنامج</a><a class="btn" href="#use">طريقة الاستخدام</a></div>
+</section>
+
+<section class="card">
+<h2>1. ما معيار يالوب؟</h2>
+<p>قدّم برنارد د. يالوب من مكتب التقويم البحري لصاحبة الجلالة HM Nautical Almanac Office طريقة تجريبية لتقدير إمكانية رؤية الهلال الأول. تعتمد الطريقة على هندسة الشمس والقمر عند «أفضل وقت» للرصد، ثم تحسب معاملًا عدديًا يسمى <b dir="ltr">q</b>.</p>
+<p class="note">النتيجة تصنيف احتمالي لظروف الرؤية، وليست إثباتًا يقينيًا بأن الهلال سيُرى أو لن يُرى في موقع فعلي.</p>
+</section>
+
+<section class="card">
+<h2>2. زمن الرصد الأفضل</h2>
+<p>يُحسب أفضل وقت بين غروب الشمس وغروب القمر وفق العلاقة:</p>
+<div class="eq">T<sub>best</sub> = T<sub>sunset</sub> + (4/9) × (T<sub>moonset</sub> − T<sub>sunset</sub>)</div>
+<p>عند هذا الوقت يحسب البرنامج مواضع الشمس والقمر والمؤشرات اللازمة لمعيار يالوب.</p>
+</section>
+
+<section class="card">
+<h2>3. معادلة q المستخدمة</h2>
+<p><b dir="ltr">ARCV</b> هو فرق الارتفاع الرأسي بين مركزي القمر والشمس عند أفضل وقت، و<b dir="ltr">W</b> هو عرض الهلال بالدقائق القوسية.</p>
+<div class="eq">q = [ARCV − (11.8371 − 6.3226W + 0.7319W² − 0.1018W³)] / 10</div>
+<p class="muted">يعرض البرنامج أيضًا الاستطالة، فرق السمت، مكث القمر، وارتفاعه عند الغروب لمساعدة الباحث في تفسير النتيجة.</p>
+</section>
+
+<section class="card">
+<h2>4. فئات يالوب A–F</h2>
+<table>
+<thead><tr><th>الفئة</th><th>مجال q</th><th>التفسير</th><th>لون البرنامج</th></tr></thead>
+<tbody>
+<tr><td>A</td><td dir="ltr">q &gt; +0.216</td><td>مرئي بسهولة بالعين المجردة</td><td><span class="sw" style="background:#108a00"></span>أخضر داكن</td></tr>
+<tr><td>B</td><td dir="ltr">+0.216 ≥ q &gt; −0.014</td><td>مرئي بالعين المجردة في ظروف مثالية</td><td><span class="sw" style="background:#63ff32"></span>أخضر فاتح</td></tr>
+<tr><td>C</td><td dir="ltr">−0.014 ≥ q &gt; −0.160</td><td>قد تحتاج وسيلة بصرية لتحديد الهلال أولًا</td><td><span class="sw" style="background:#fff8b8"></span>أصفر باهت</td></tr>
+<tr><td>D</td><td dir="ltr">−0.160 ≥ q &gt; −0.232</td><td>تحتاج وسيلة بصرية لإيجاد الهلال</td><td><span class="sw" style="background:#ffff00"></span>أصفر</td></tr>
+<tr><td>E</td><td dir="ltr">−0.232 ≥ q &gt; −0.293</td><td>غير مرئي بتلسكوب تقليدي وفق التصنيف</td><td><span class="sw" style="background:#ff9900"></span>برتقالي</td></tr>
+<tr><td>F</td><td dir="ltr">q ≤ −0.293</td><td>غير مرئي وتحت حد دانجون في نموذج يالوب</td><td><span class="sw" style="background:#fff"></span>أبيض/دون تلوين</td></tr>
+<tr><td>استبعاد هندسي</td><td>—</td><td>القمر يغرب قبل الشمس أو لا تتحقق شروط التطبيق</td><td><span class="sw" style="background:#ff0000"></span>أحمر</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="card" id="use">
+<h2>5. طريقة استخدام البرنامج</h2>
+<ol>
+<li>اختر تاريخ الرصد المحلي.</li>
+<li>اختر دقة الشبكة؛ 10° للاختبار السريع و1° لرسم أكثر تفصيلًا.</li>
+<li>اضغط <b>حساب الخريطة</b> وانتظر اكتمال شريط التقدم.</li>
+<li>استخدم نقطة الاختبار أو قائمة العواصم للحصول على q والبيانات التفصيلية.</li>
+<li>صدّر الخريطة PNG، أو أنشئ تقرير HTML، أو افتح تقرير الطباعة واحفظه PDF من المتصفح.</li>
+</ol>
+<p class="note">عند مقارنة خرائط متعددة، ثبّت التاريخ ودقة الشبكة والشفافية ونمط الرسم حتى تكون المقارنة متجانسة.</p>
+</section>
+
+<section class="card">
+<h2>6. حدود الدقة والتفسير</h2>
+<ul>
+<li>المعيار لا يدخل الطقس الفعلي، السحب، الغبار، الرطوبة، التلوث الضوئي أو العوائق المحلية في الأفق.</li>
+<li>خبرة الراصد، حدة البصر، ارتفاع الموقع وجودة المنظار أو التلسكوب عوامل حاسمة.</li>
+<li>الخلايا القريبة من حدود الألوان حساسة للفروق الصغيرة في المواقع الفلكية ودقة الشبكة.</li>
+<li>المحرك الفلكي مضمّن داخل ملف HTML، ولا يمثل خدمة HMNAO الرسمية ولا حزمة JPL DE440.</li>
+<li>البرنامج أداة تحليل وبحث، ولا يصدر حكمًا شرعيًا أو إعلانًا رسميًا لبداية الأشهر.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>7. المراجع</h2>
+<ul>
+<li>B. D. Yallop, <i>A Method for Predicting the First Sighting of the New Crescent Moon</i>, NAO Technical Note No. 69, 1997; updated 1998.</li>
+<li>HM Nautical Almanac Office — معلومات المكتب وخدمات توقع رؤية الهلال: <a href="https://www.gov.uk/government/organisations/hm-nautical-almanac-office/about" target="_blank" rel="noopener">GOV.UK</a>.</li>
+<li>U.S. Naval Observatory — شرح عام للعوامل المؤثرة في رؤية الهلال: <a href="https://aa.usno.navy.mil/faq/crescent" target="_blank" rel="noopener">Crescent Moon Visibility</a>.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>8. الإعداد والتوثيق</h2>
+<p><b>إعداد وتصميم:</b> الفيزيائي عمر الباز — رئيس مبرمجين أقدم — فلكي ومصور فلكي ومصمم — عضو الاتحاد العربي لعلوم الفلك والفضاء — العراق، سامراء.</p>
+<p class="muted">الإصدار: v9.6.3 Web Edition</p>
+</section>
+</div>
+</body>
+</html>
